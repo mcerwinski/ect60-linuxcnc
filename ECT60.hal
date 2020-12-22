@@ -1,0 +1,36 @@
+loadusr -W lcec_conf [LCEC]CONFIG
+loadrt lcec
+
+loadrt [KINS]KINEMATICS
+loadrt [EMCMOT]EMCMOT base_period_nsec=[EMCMOT]BASE_PERIOD servo_period_nsec=[EMCMOT]SERVO_PERIOD num_joints=[KINS]JOINTS 
+
+loadrt scale
+loadrt conv_s32_float
+loadrt conv_float_s32
+
+addf lcec.read-all servo-thread
+addf lcec.write-all servo-thread
+
+addf motion-command-handler servo-thread
+addf motion-controller servo-thread   
+
+# X-AXIS #######################################################
+#write d8 to h6060 to use CSP mode
+setp lcec.0.0.opmode-3 true
+
+#Enable operation
+setp lcec.0.0.X-cmd-SwitchOn 1
+setp lcec.0.0.X-cmd-EnableVoltage 1
+setp lcec.0.0.X-cmd-QuickStop 1
+setp lcec.0.0.X-cmd-EnableOperation 1
+
+net Xaxis_fb lcec.0.0.actpos => joint.0.motor-pos-fb
+net Xaxis_cmd joint.0.motor-pos-cmd => lcec.0.0.poscmd
+
+#simulate y&z
+net Yaxis_cmd joint.1.motor-pos-cmd => joint.1.motor-pos-fb
+net Zaxis_cmd joint.2.motor-pos-cmd => joint.2.motor-pos-fb
+
+# estop loopback
+net estop-loop iocontrol.0.user-enable-out iocontrol.0.emc-enable-in
+
