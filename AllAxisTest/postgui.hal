@@ -1,0 +1,2 @@
+#setp lcec.0.0.X-cmd-OPmodeRel1 1
+setp joint.0.jog-enable 1

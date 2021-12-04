@@ -1,0 +1,193 @@
+<masters>
+  <master idx="0" appTimePeriod="990000" refClockSyncCycles="1000">
+    <!-- ECT60 slave -->
+    <slave idx="0" type="generic" vid="00000A88" pid="0a880002" configPdos="true">
+      <dcConf assignActivate="300" sync0Cycle="*1" sync0Shift="0"/>
+      <syncManager idx="0" dir="out">
+      </syncManager>
+      <syncManager idx="1" dir="in">
+      </syncManager>
+      <syncManager idx="2" dir="out">
+        <pdo idx="1600">
+          <pdoEntry idx="6040" subIdx="00" bitLen="16" halType="complex">
+            <complexEntry bitLen="1" halPin="X0-cmd-SwitchOn" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X0-cmd-EnableVoltage" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X0-cmd-QuickStop" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X0-cmd-EnableOperation" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X0-cmd-OPmodeRel1" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X0-cmd-OPmodeRel2" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X0-cmd-OpmodeRel3" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X0-cmd-FaultReset" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X0-TimeOut" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X0-cmd-OpmodeRel4" halType="bit"/>
+	    <complexEntry bitLen="6"/>
+          </pdoEntry>
+          <pdoEntry idx="6060" subIdx="00" bitLen="8" halPin="opmode" halType="bit"/>
+          <pdoEntry idx="607A" subIdx="00" bitLen="32" halPin="poscmd" halType="float" scale="1000"/>
+        </pdo>
+      </syncManager>
+      <syncManager idx="3" dir="in">
+        <pdo idx="1a00">
+          <pdoEntry idx="6041" subIdx="00" bitLen="16" halType="complex">
+            <complexEntry bitLen="1" halPin="X0-stat-ReadyToSwitchOn" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X0-stat-SwitchOn" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X0-stat-OperationEnable" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X0-stat-Fault" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X0-stat-VoltageEnabled" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X0-stat-QuickStop" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X0-stat-SwitchOnDisable" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X0-stat-Warning" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X0-stat-Keep" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X0-stat-Remote" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X0-stat-TargetIsReached" halType="bit"/>
+	    <complexEntry bitLen="5"/>
+          </pdoEntry>  
+          <pdoEntry idx="6061" subIdx="00" bitLen="8" halPin="opmode_fb" halType="bit"/>
+          <pdoEntry idx="6064" subIdx="00" bitLen="32" halPin="actpos" halType="float" scale="0.001"/>
+          <pdoEntry idx="60FD" subIdx="00" bitLen="32" halPin="digital_inputs" halType="bit"/>
+        </pdo>
+      </syncManager>
+    </slave>
+	<slave idx="1" type="generic" vid="00000A88" pid="0a880002" configPdos="true">
+      <dcConf assignActivate="300" sync0Cycle="*1" sync0Shift="0"/>
+      <syncManager idx="0" dir="out">
+      </syncManager>
+      <syncManager idx="1" dir="in">
+      </syncManager>
+      <syncManager idx="2" dir="out">
+        <pdo idx="1600">
+          <pdoEntry idx="6040" subIdx="00" bitLen="16" halType="complex">
+            <complexEntry bitLen="1" halPin="X1-cmd-SwitchOn" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X1-cmd-EnableVoltage" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X1-cmd-QuickStop" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X1-cmd-EnableOperation" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X1-cmd-OPmodeRel1" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X1-cmd-OPmodeRel2" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X1-cmd-OpmodeRel3" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X1-cmd-FaultReset" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X1-TimeOut" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X1-cmd-OpmodeRel4" halType="bit"/>
+	    <complexEntry bitLen="6"/>
+          </pdoEntry>
+          <pdoEntry idx="6060" subIdx="00" bitLen="8" halPin="opmode" halType="bit"/>
+          <pdoEntry idx="607A" subIdx="00" bitLen="32" halPin="poscmd" halType="float" scale="1000"/>
+        </pdo>
+      </syncManager>
+      <syncManager idx="3" dir="in">
+        <pdo idx="1a00">
+          <pdoEntry idx="6041" subIdx="00" bitLen="16" halType="complex">
+            <complexEntry bitLen="1" halPin="X1-stat-ReadyToSwitchOn" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X1-stat-SwitchOn" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X1-stat-OperationEnable" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X1-stat-Fault" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X1-stat-VoltageEnabled" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X1-stat-QuickStop" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X1-stat-SwitchOnDisable" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X1-stat-Warning" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X1-stat-Keep" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X1-stat-Remote" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X1-stat-TargetIsReached" halType="bit"/>
+	    <complexEntry bitLen="5"/>
+          </pdoEntry>  
+          <pdoEntry idx="6061" subIdx="00" bitLen="8" halPin="opmode_fb" halType="bit"/>
+          <pdoEntry idx="6064" subIdx="00" bitLen="32" halPin="actpos" halType="float" scale="0.001"/>
+          <pdoEntry idx="60FD" subIdx="00" bitLen="32" halPin="digital_inputs" halType="bit"/>
+        </pdo>
+      </syncManager>
+    </slave>
+	<slave idx="2" type="generic" vid="00000A88" pid="0a880002" configPdos="true">
+      <dcConf assignActivate="300" sync0Cycle="*1" sync0Shift="0"/>
+      <syncManager idx="0" dir="out">
+      </syncManager>
+      <syncManager idx="1" dir="in">
+      </syncManager>
+      <syncManager idx="2" dir="out">
+        <pdo idx="1600">
+          <pdoEntry idx="6040" subIdx="00" bitLen="16" halType="complex">
+            <complexEntry bitLen="1" halPin="Y-cmd-SwitchOn" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Y-cmd-EnableVoltage" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Y-cmd-QuickStop" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Y-cmd-EnableOperation" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Y-cmd-OPmodeRel1" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Y-cmd-OPmodeRel2" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Y-cmd-OpmodeRel3" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Y-cmd-FaultReset" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Y-TimeOut" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Y-cmd-OpmodeRel4" halType="bit"/>
+	    <complexEntry bitLen="6"/>
+          </pdoEntry>
+          <pdoEntry idx="6060" subIdx="00" bitLen="8" halPin="opmode" halType="bit"/>
+          <pdoEntry idx="607A" subIdx="00" bitLen="32" halPin="poscmd" halType="float" scale="1000"/>
+        </pdo>
+      </syncManager>
+      <syncManager idx="3" dir="in">
+        <pdo idx="1a00">
+          <pdoEntry idx="6041" subIdx="00" bitLen="16" halType="complex">
+            <complexEntry bitLen="1" halPin="Y-stat-ReadyToSwitchOn" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Y-stat-SwitchOn" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Y-stat-OperationEnable" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Y-stat-Fault" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Y-stat-VoltageEnabled" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Y-stat-QuickStop" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Y-stat-SwitchOnDisable" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Y-stat-Warning" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Y-stat-Keep" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Y-stat-Remote" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Y-stat-TargetIsReached" halType="bit"/>
+	    <complexEntry bitLen="5"/>
+          </pdoEntry>  
+          <pdoEntry idx="6061" subIdx="00" bitLen="8" halPin="opmode_fb" halType="bit"/>
+          <pdoEntry idx="6064" subIdx="00" bitLen="32" halPin="actpos" halType="float" scale="0.001"/>
+          <pdoEntry idx="60FD" subIdx="00" bitLen="32" halPin="digital_inputs" halType="bit"/>
+        </pdo>
+      </syncManager>
+    </slave>
+	<slave idx="3" type="generic" vid="00000A88" pid="0a880002" configPdos="true">
+      <dcConf assignActivate="300" sync0Cycle="*1" sync0Shift="0"/>
+      <syncManager idx="0" dir="out">
+      </syncManager>
+      <syncManager idx="1" dir="in">
+      </syncManager>
+      <syncManager idx="2" dir="out">
+        <pdo idx="1600">
+          <pdoEntry idx="6040" subIdx="00" bitLen="16" halType="complex">
+            <complexEntry bitLen="1" halPin="Z-cmd-SwitchOn" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Z-cmd-EnableVoltage" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Z-cmd-QuickStop" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Z-cmd-EnableOperation" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Z-cmd-OPmodeRel1" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Z-cmd-OPmodeRel2" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Z-cmd-OpmodeRel3" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Z-cmd-FaultReset" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Z-TimeOut" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Z-cmd-OpmodeRel4" halType="bit"/>
+	    <complexEntry bitLen="6"/>
+          </pdoEntry>
+          <pdoEntry idx="6060" subIdx="00" bitLen="8" halPin="opmode" halType="bit"/>
+          <pdoEntry idx="607A" subIdx="00" bitLen="32" halPin="poscmd" halType="float" scale="1000"/>
+        </pdo>
+      </syncManager>
+      <syncManager idx="3" dir="in">
+        <pdo idx="1a00">
+          <pdoEntry idx="6041" subIdx="00" bitLen="16" halType="complex">
+            <complexEntry bitLen="1" halPin="Z-stat-ReadyToSwitchOn" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Z-stat-SwitchOn" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Z-stat-OperationEnable" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Z-stat-Fault" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Z-stat-VoltageEnabled" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Z-stat-QuickStop" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Z-stat-SwitchOnDisable" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Z-stat-Warning" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Z-stat-Keep" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Z-stat-Remote" halType="bit"/>
+            <complexEntry bitLen="1" halPin="Z-stat-TargetIsReached" halType="bit"/>
+	    <complexEntry bitLen="5"/>
+          </pdoEntry>  
+          <pdoEntry idx="6061" subIdx="00" bitLen="8" halPin="opmode_fb" halType="bit"/>
+          <pdoEntry idx="6064" subIdx="00" bitLen="32" halPin="actpos" halType="float" scale="0.001"/>
+          <pdoEntry idx="60FD" subIdx="00" bitLen="32" halPin="digital_inputs" halType="bit"/>
+        </pdo>
+      </syncManager>
+    </slave>
+  </master>
+</masters>

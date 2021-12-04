@@ -1,1 +1,79 @@
+loadusr -W lcec_conf [LCEC]CONFIG
+loadrt lcec
+
+loadrt [KINS]KINEMATICS
+loadrt [EMCMOT]EMCMOT base_period_nsec=[EMCMOT]BASE_PERIOD servo_period_nsec=[EMCMOT]SERVO_PERIOD num_joints=[KINS]JOINTS 
+
+loadrt scale
+loadrt conv_s32_float
+loadrt conv_float_s32
+
+addf lcec.read-all servo-thread
+addf lcec.write-all servo-thread
+
+addf motion-command-handler servo-thread
+addf motion-controller servo-thread   
+
+# X-AXIS #######################################################
+# X0
+# joint 0
+# write d8 to h6060 to use CSP mode
+setp lcec.0.0.opmode-3 true
+
+# Enable operation
+setp lcec.0.0.X0-cmd-SwitchOn 1
+setp lcec.0.0.X0-cmd-EnableVoltage 1
+setp lcec.0.0.X0-cmd-QuickStop 1
+setp lcec.0.0.X0-cmd-EnableOperation 1
+
+net Xaxis_fb lcec.0.0.actpos => joint.0.motor-pos-fb
+net Xaxis_cmd joint.0.motor-pos-cmd => lcec.0.0.poscmd
+
+# X1
+# joint 1
+# write d8 to h6060 to use CSP mode
+setp lcec.0.1.opmode-3 true
+
+# Enable operation
+setp lcec.0.1.X1-cmd-SwitchOn 1
+setp lcec.0.1.X1-cmd-EnableVoltage 1
+setp lcec.0.1.X1-cmd-QuickStop 1
+setp lcec.0.1.X1-cmd-EnableOperation 1
+
+net Xaxis_fb lcec.0.1.actpos => joint.1.motor-pos-fb
+net Xaxis_cmd joint.1.motor-pos-cmd => lcec.0.1.poscmd
+
+
+# Y-AXIS #######################################################
+# joint 2
+# write d8 to h6060 to use CSP mode
+setp lcec.0.2.opmode-3 true
+
+# Enable operation
+setp lcec.0.2.Y-cmd-SwitchOn 1
+setp lcec.0.2.Y-cmd-EnableVoltage 1
+setp lcec.0.2.Y-cmd-QuickStop 1
+setp lcec.0.2.Y-cmd-EnableOperation 1
+
+net Xaxis_fb lcec.0.2.actpos => joint.2.motor-pos-fb
+net Xaxis_cmd joint.2.motor-pos-cmd => lcec.0.2.poscmd
+
+
+# Z-AXIS #######################################################
+# joint 3
+# write d8 to h6060 to use CSP mode
+setp lcec.0.3.opmode-3 true
+
+# Enable operation
+setp lcec.0.3.Z-cmd-SwitchOn 1
+setp lcec.0.3.Z-cmd-EnableVoltage 1
+setp lcec.0.3.Z-cmd-QuickStop 1
+setp lcec.0.3.Z-cmd-EnableOperation 1
+
+net Xaxis_fb lcec.0.3.actpos => joint.3.motor-pos-fb
+net Xaxis_cmd joint.3.motor-pos-cmd => lcec.0.3.poscmd
+
+
+# estop loopback
+net estop-loop iocontrol.0.user-enable-out iocontrol.0.emc-enable-in
 
