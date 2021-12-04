@@ -1,8 +1,6 @@
 <masters>
   <master idx="0" appTimePeriod="990000" refClockSyncCycles="1000">
-    <!-- ECT60 slave -->
     <slave idx="0" type="generic" vid="00000A88" pid="0a880002" configPdos="true">
-      <!--<initCmds filename="ECT60.xml"/>-->
       <dcConf assignActivate="300" sync0Cycle="*1" sync0Shift="0"/>
       <syncManager idx="0" dir="out">
       </syncManager>
@@ -17,10 +15,10 @@
             <complexEntry bitLen="1" halPin="X-cmd-EnableOperation" halType="bit"/>
             <complexEntry bitLen="1" halPin="X-cmd-OPmodeRel1" halType="bit"/>
             <complexEntry bitLen="1" halPin="X-cmd-OPmodeRel2" halType="bit"/>
-            <complexEntry bitLen="1" halPin="X-cmd-OpmodeRel3" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X-cmd-OPmodeRel3" halType="bit"/>
             <complexEntry bitLen="1" halPin="X-cmd-FaultReset" halType="bit"/>
             <complexEntry bitLen="1" halPin="X-TimeOut" halType="bit"/>
-            <complexEntry bitLen="1" halPin="X-cmd-OpmodeRel4" halType="bit"/>
+            <complexEntry bitLen="1" halPin="X-cmd-OPmodeRel4" halType="bit"/>
 	    <complexEntry bitLen="6"/>
           </pdoEntry>
           <pdoEntry idx="6060" subIdx="00" bitLen="8" halPin="opmode" halType="bit"/>

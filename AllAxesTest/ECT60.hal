@@ -21,42 +21,43 @@ addf motion-controller servo-thread
 setp lcec.0.0.opmode-3 true
 
 # Enable operation
-setp lcec.0.0.X0-cmd-SwitchOn 1
-setp lcec.0.0.X0-cmd-EnableVoltage 1
-setp lcec.0.0.X0-cmd-QuickStop 1
-setp lcec.0.0.X0-cmd-EnableOperation 1
+setp lcec.0.0.X-cmd-SwitchOn 1
+setp lcec.0.0.X-cmd-EnableVoltage 1
+setp lcec.0.0.X-cmd-QuickStop 1
+setp lcec.0.0.X-cmd-EnableOperation 1
 
 net Xaxis_fb lcec.0.0.actpos => joint.0.motor-pos-fb
 net Xaxis_cmd joint.0.motor-pos-cmd => lcec.0.0.poscmd
 
-# X1
+
+# Y-AXIS #######################################################
+# Y0
 # joint 1
 # write d8 to h6060 to use CSP mode
 setp lcec.0.1.opmode-3 true
 
 # Enable operation
-setp lcec.0.1.X1-cmd-SwitchOn 1
-setp lcec.0.1.X1-cmd-EnableVoltage 1
-setp lcec.0.1.X1-cmd-QuickStop 1
-setp lcec.0.1.X1-cmd-EnableOperation 1
+setp lcec.0.1.Y0-cmd-SwitchOn 1
+setp lcec.0.1.Y0-cmd-EnableVoltage 1
+setp lcec.0.1.Y0-cmd-QuickStop 1
+setp lcec.0.1.Y0-cmd-EnableOperation 1
 
-net Xaxis_fb lcec.0.1.actpos => joint.1.motor-pos-fb
-net Xaxis_cmd joint.1.motor-pos-cmd => lcec.0.1.poscmd
+net Y0axis_fb lcec.0.1.actpos => joint.1.motor-pos-fb
+net Y0axis_cmd joint.1.motor-pos-cmd => lcec.0.1.poscmd
 
-
-# Y-AXIS #######################################################
+Y1
 # joint 2
 # write d8 to h6060 to use CSP mode
 setp lcec.0.2.opmode-3 true
 
 # Enable operation
-setp lcec.0.2.Y-cmd-SwitchOn 1
-setp lcec.0.2.Y-cmd-EnableVoltage 1
-setp lcec.0.2.Y-cmd-QuickStop 1
-setp lcec.0.2.Y-cmd-EnableOperation 1
+setp lcec.0.2.Y1-cmd-SwitchOn 1
+setp lcec.0.2.Y1-cmd-EnableVoltage 1
+setp lcec.0.2.Y1-cmd-QuickStop 1
+setp lcec.0.2.Y1-cmd-EnableOperation 1
 
-net Xaxis_fb lcec.0.2.actpos => joint.2.motor-pos-fb
-net Xaxis_cmd joint.2.motor-pos-cmd => lcec.0.2.poscmd
+net Y1axis_fb lcec.0.2.actpos => joint.2.motor-pos-fb
+net Y1axis_cmd joint.2.motor-pos-cmd => lcec.0.2.poscmd
 
 
 # Z-AXIS #######################################################
@@ -70,8 +71,8 @@ setp lcec.0.3.Z-cmd-EnableVoltage 1
 setp lcec.0.3.Z-cmd-QuickStop 1
 setp lcec.0.3.Z-cmd-EnableOperation 1
 
-net Xaxis_fb lcec.0.3.actpos => joint.3.motor-pos-fb
-net Xaxis_cmd joint.3.motor-pos-cmd => lcec.0.3.poscmd
+net Zaxis_fb lcec.0.3.actpos => joint.3.motor-pos-fb
+net Zaxis_cmd joint.3.motor-pos-cmd => lcec.0.3.poscmd
 
 
 # estop loopback
